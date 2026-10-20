@@ -1,0 +1,50 @@
+[
+    {
+        "key": "beach",
+        "label": "Beaches & islands",
+        "icon": "bi-water",
+        "outdoor": true,
+        "created": "2026-10-12T19:36:45+02:00",
+        "updated": "2026-10-12T19:36:45+02:00"
+    },
+    {
+        "key": "nature",
+        "label": "Nature & lakes",
+        "icon": "bi-tree",
+        "outdoor": true,
+        "created": "2026-10-12T19:36:45+02:00",
+        "updated": "2026-10-12T19:36:45+02:00"
+    },
+    {
+        "key": "history",
+        "label": "Historical & cultural",
+        "icon": "bi-bank",
+        "outdoor": false,
+        "created": "2026-10-12T19:36:45+02:00",
+        "updated": "2026-10-12T19:36:45+02:00"
+    },
+    {
+        "key": "landmark",
+        "label": "Landmarks & viewpoints",
+        "icon": "bi-geo-alt",
+        "outdoor": false,
+        "created": "2026-10-12T19:36:45+02:00",
+        "updated": "2026-10-12T19:36:45+02:00"
+    },
+    {
+        "key": "balay",
+        "label": "Balay",
+        "icon": "bi-shop",
+        "outdoor": false,
+        "created": "2026-10-16T02:28:56+02:00",
+        "updated": "2026-10-16T02:28:56+02:00"
+    },
+    {
+        "key": "view",
+        "label": "view",
+        "icon": "bi-water",
+        "outdoor": true,
+        "created": "2026-10-16T04:17:43+02:00",
+        "updated": "2026-10-16T04:17:43+02:00"
+    }
+]
