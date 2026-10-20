@@ -3,167 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Log in</title>
-
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="css/fonts.css" rel="stylesheet">
-
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/theme.css" rel="stylesheet">
-  <script src="js/theme-init.js"></script>
+  <meta name="robots" content="noindex">
+  <script src="../js/theme-init.js"></script>
+  <title>Admin Log in</title>
+  <link href="../css/fonts.css" rel="stylesheet">
+  <link href="css/admin.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
 </head>
-<body>
+<body class="admin-body" data-no-theme-fab>
+<main class="ad-login">
+  <div class="ad-login-card">
+    <div class="lg-brand">
+      <span class="lg-logo">
+        <img src="../images/logo-compass.svg" alt="" width="34" height="34">
+        <span class="lg-logo-text">Leyte Tourism Guide</span>
+      </span>
+      <span class="badge-admin">Admin console</span>
+      <button type="button" class="lg-theme" data-theme-toggle aria-label="Switch theme">
+        <svg class="i-sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg>
+        <svg class="i-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/></svg>
+      </button>
+    </div>
+    <h1>Welcome back</h1>
+    <p class="lg-sub">Sign In. <br> For authorized Staff only.</p>
 
-<div class="container-fluid p-0">
-  <div class="row g-0 min-vh-100 auth-row">
+    <div id="formAlert" class="alert d-none" role="alert" aria-live="polite"></div>
 
-    <!-- Left: brand + scene -->
-    <aside class="col-lg-6 scene">
-      <div id="placeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5500" data-bs-pause="hover" aria-label="Featured Leyte destinations">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#placeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Kalanggaman Island"></button>
-          <button type="button" data-bs-target="#placeCarousel" data-bs-slide-to="1" aria-label="Lake Danao"></button>
-          <button type="button" data-bs-target="#placeCarousel" data-bs-slide-to="2" aria-label="San Juanico Bridge"></button>
-          <button type="button" data-bs-target="#placeCarousel" data-bs-slide-to="3" aria-label="Cuatro Islas"></button>
-        </div>
-        <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="slide-art" style="background:linear-gradient(#6EC3E6,#CFEFF0)">
-            <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <circle cx="620" cy="230" r="60" fill="#FFF3C4" opacity=".9"/>
-          <rect y="520" width="800" height="380" fill="#1E8FA0"/>
-          <path d="M0 640 Q200 600 400 630 T800 620 V900 H0Z" fill="#35B8B3"/>
-          <ellipse cx="400" cy="680" rx="330" ry="70" fill="#7FE0D0" opacity=".7"/>
-          <path d="M120 690 Q420 640 700 685 Q430 725 120 690Z" fill="#F6EBCB"/>
-          <path d="M300 600 Q420 540 540 600 Q420 625 300 600Z" fill="#F6EBCB"/>
-          <path d="M330 590 Q420 530 510 590 Q420 575 330 590Z" fill="#2E8B57"/>
-          <path d="M405 585 Q400 520 385 490 M405 585 Q410 515 435 485" stroke="#5B3A29" stroke-width="5" fill="none"/>
-          <path d="M385 490 Q350 480 335 500 M385 490 Q380 465 360 460 M385 490 Q415 470 430 480 M435 485 Q470 470 490 490 M435 485 Q440 460 460 455" stroke="#1F6B3F" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
-          </div>
-          <img class="slide-photo" src="images/kalanggaman-island.jpg" alt="">
-          <div class="slide-caption"><strong>Kalanggaman Island</strong><span>Palompon</span><small>A white sandbar in clear water. Best at sunset.</small></div>
-        </div>
-        <div class="carousel-item">
-          <div class="slide-art" style="background:linear-gradient(#A9CCD6,#E6F0EA)">
-            <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <path d="M0 470 L120 360 L230 450 L360 300 L500 440 L620 340 L800 470 V600 H0Z" fill="#3E7C6B" opacity=".75"/>
-          <path d="M0 540 L150 430 L300 520 L470 400 L640 520 L800 450 V620 H0Z" fill="#1F5B4B"/>
-          <rect y="580" width="800" height="320" fill="#2B7F86"/>
-          <path d="M0 620 Q200 605 400 620 T800 620 V660 H0Z" fill="#1F5B4B" opacity=".5"/>
-          <rect y="480" width="800" height="110" fill="#fff" opacity=".3"/>
-          <path d="M0 720 Q200 710 400 720 T800 720 M0 780 Q200 770 400 780 T800 780" stroke="#fff" opacity=".22" stroke-width="3" fill="none"/></svg>
-          </div>
-          <img class="slide-photo" src="images/lake-danao.jpg" alt="">
-          <div class="slide-caption"><strong>Lake Danao</strong><span>Ormoc City</span><small>A mountain lake wrapped in morning mist.</small></div>
-        </div>
-        <div class="carousel-item">
-          <div class="slide-art" style="background:linear-gradient(#F7C777,#F2A541 60%,#F7C777)">
-            <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <circle cx="600" cy="470" r="70" fill="#FCE3B0" opacity=".9"/>
-          <rect y="590" width="800" height="310" fill="#0E5E6F"/>
-          <g transform="translate(0 400)">
-            <g stroke="#0B2A3C" stroke-width="3" fill="none"><path d="M60 150 Q400 -10 740 150"/><path d="M0 175 H800" stroke-width="7"/></g>
-            <g stroke="#0B2A3C" stroke-width="1.5" opacity=".7"><path d="M140 175V112M220 175V88M300 175V72M380 175V66M460 175V68M540 175V80M620 175V102M700 175V133"/></g>
-            <g fill="#0B2A3C"><rect x="196" y="175" width="10" height="70"/><rect x="396" y="175" width="10" height="70"/><rect x="596" y="175" width="10" height="70"/></g>
-          </g>
-          <path d="M0 650 Q100 636 200 650 T400 650 T600 650 T800 650 V900 H0Z" fill="#0E5E6F" opacity=".85"/>
-          <path d="M0 720 Q100 706 200 720 T400 720 T600 720 T800 720 V900 H0Z" fill="#0B2A3C" opacity=".85"/></svg>
-          </div>
-          <img class="slide-photo" src="images/san-juanico-bridge.jpg" alt="">
-          <div class="slide-caption"><strong>San Juanico Bridge</strong><span>Tacloban City</span><small>Leyte meets Samar. Best at sunrise.</small></div>
-        </div>
-        <div class="carousel-item">
-          <div class="slide-art" style="background:linear-gradient(#4B3A6B,#E8674A 65%,#F7B267)">
-            <svg viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <circle cx="400" cy="560" r="85" fill="#FFD9A0"/>
-          <rect y="560" width="800" height="340" fill="#5A2F55"/>
-          <rect x="350" y="575" width="100" height="280" fill="#F7B267" opacity=".35"/>
-          <path d="M100 560 Q190 470 290 560Z" fill="#1E1730"/>
-          <path d="M500 560 Q600 440 710 560Z" fill="#1E1730"/>
-          <path d="M620 560 Q670 505 740 560Z" fill="#1E1730"/>
-          <path d="M0 640 Q200 628 400 640 T800 640 M0 720 Q200 708 400 720 T800 720" stroke="#F7B267" opacity=".25" stroke-width="3" fill="none"/></svg>
-          </div>
-          <img class="slide-photo" src="images/cuatro-islas.jpg" alt="">
-          <div class="slide-caption"><strong>Cuatro Islas</strong><span>Inopacan</span><small>Island silhouettes at sunset.</small></div>
-        </div>
-        </div>
+    <form id="adminLoginForm" novalidate>
+      <div class="lg-field">
+        <label class="lg-label" for="email">Email</label>
+        <input type="email" class="lg-input" id="email" autocomplete="username" placeholder="Email" aria-describedby="emailErr" required>
+        <p class="lg-err d-none" id="emailErr" role="alert"></p>
       </div>
-      <div class="scene-scrim"></div>
-      <div class="scene-copy">
-        <a href="#" class="brand d-inline-flex align-items-center gap-2 mb-3 mb-lg-4">
-          <span class="brand-mark"><img src="images/logo-compass.svg" alt="" width="26" height="26"></span> Leyte Tourism Guide
-        </a>
-        <h1>Plan your Leyte trip before you pack.</h1>
-        <div class="d-none d-lg-flex flex-wrap gap-2 mt-4">
-          <span class="feature-pill"><i class="bi bi-cloud-sun"></i> Live weather</span>
-          <span class="feature-pill"><i class="bi bi-signpost-split"></i> Route planner</span>
-          <span class="feature-pill"><i class="bi bi-calendar2-check"></i> Day trip plans</span>
+      <div class="lg-field">
+        <label class="lg-label" for="password">Password</label>
+        <div class="lg-wrap">
+          <input type="password" class="lg-input" id="password" autocomplete="current-password" aria-describedby="pwErr" required>
+          <button type="button" class="lg-toggle" id="pwToggle" aria-label="Show password" aria-pressed="false">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path id="eyeOn" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.17 8a13 13 0 0 1 1.66-2.04C4.12 4.67 5.88 3.5 8 3.5s3.88 1.17 5.17 2.46A13 13 0 0 1 14.83 8a13 13 0 0 1-1.66 2.04C11.88 11.33 10.12 12.5 8 12.5s-3.88-1.17-5.17-2.46A13 13 0 0 1 1.17 8"/><path id="eyeOn2" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/></svg>
+          </button>
         </div>
+        <p class="lg-err d-none" id="pwErr" role="alert"></p>
       </div>
-    </aside>
-
-    <!-- Right: log in -->
-    <main class="col-lg-6 offset-lg-6 d-flex align-items-center justify-content-center p-4 p-lg-5">
-      <div class="auth-wrap">
-
-        <ul class="nav nav-pills nav-fill mb-4" id="authTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a class="nav-link active" href="login.html">Log in</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" href="register.html">Create account</a>
-          </li>
-        </ul>
-
-        <div id="formAlert" class="alert d-none" role="alert"></div>
-
-        <h2 class="h3 fw-bold mb-1">Welcome back</h2>
-        <p class="text-secondary mb-4">Log in to see your favorites and saved routes.</p>
-
-        <form id="loginForm" novalidate>
-          <div class="mb-3">
-            <label for="loginEmail" class="form-label">Email address</label>
-            <input type="email" class="form-control form-control-lg" id="loginEmail" name="email"
-                   autocomplete="email" required>
-            <div class="invalid-feedback">Enter the email you registered with.</div>
-          </div>
-
-          <div class="mb-3">
-            <label for="loginPassword" class="form-label">Password</label>
-            <div class="input-group has-validation">
-              <input type="password" class="form-control form-control-lg" id="loginPassword" name="password"
-                     autocomplete="current-password" required>
-              <button class="btn btn-outline-secondary toggle-pw" type="button" data-target="loginPassword"
-                      aria-label="Show password"><i class="bi bi-eye"></i></button>
-              <div class="invalid-feedback">Enter your password.</div>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="remember">
-              <label class="form-check-label" for="remember">Keep me logged in</label>
-            </div>
-            <a href="forgot-password.html" class="small">Forgot password?</a>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-lg w-100">Log in</button>
-        </form>
-
-        <p class="text-center text-secondary mt-4 mb-0">
-          New to Leyte Tourism Guide?
-          <a href="register.html" class="fw-semibold">Create an account</a>
-        </p>
-      </div>
-    </main>
+      <button type="submit" class="lg-btn" id="loginBtn">Sign in</button>
+    </form>
+    <p class="lg-back"><a href="../login.html">&larr; Back to the public site</a></p>
   </div>
-</div>
+</main>
 
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/common.js"></script>
-<script src="js/login-slides.js"></script>
-<script src="js/login.js"></script>
+<script src="../js/theme.js"></script>
+<script src="js/admin.js"></script>
+<script>
+(function () {
+  const box = document.getElementById('formAlert');
+  const show = (type, msg) => { box.className = 'alert alert-' + type; box.textContent = msg; };
+  const q = new URLSearchParams(location.search);
+  if (q.has('denied')) show('warning', 'That account is not an administrator. Sign in with an admin account.');
+  else if (q.has('expired')) show('info', 'Please sign in to continue.');
+
+  // Already signed in as an admin? Go straight to the dashboard.
+  Admin.api('me.php', {}, { noRedirect: true }).then(r => { if (r.ok) location.replace('index.html'); });
+
+  const emailEl = document.getElementById('email'), pwEl = document.getElementById('password');
+  const fieldError = (input, id, msg) => { const p = document.getElementById(id); p.textContent = msg; p.classList.toggle('d-none', !msg); input.setAttribute('aria-invalid', msg ? 'true' : 'false'); };
+  emailEl.addEventListener('input', () => fieldError(emailEl, 'emailErr', ''));
+  pwEl.addEventListener('input', () => fieldError(pwEl, 'pwErr', ''));
+  document.getElementById('pwToggle').addEventListener('click', function () {
+    const show = pwEl.type === 'password';
+    pwEl.type = show ? 'text' : 'password';
+    this.setAttribute('aria-pressed', String(show)); this.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+  });
+
+  let busy = false;   // a second click or Enter while signing in does nothing
+  document.getElementById('adminLoginForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    if (busy) return;
+    const email = emailEl.value.trim(), password = pwEl.value;
+    fieldError(emailEl, 'emailErr', email ? (/^\S+@\S+\.\S+$/.test(email) ? '' : 'Enter a valid email address.') : 'Enter your email.');
+    fieldError(pwEl, 'pwErr', password ? '' : 'Enter your password.');
+    if (!email || !password || !/^\S+@\S+\.\S+$/.test(email)) { (!email || !/^\S+@\S+\.\S+$/.test(email) ? emailEl : pwEl).focus(); return; }
+    busy = true;
+    const btn = document.getElementById('loginBtn');
+    Admin.loading(btn, true, 'Signing in…');
+    const res = await Admin.api('login.php', { email, password }, { noRedirect: true });
+    if (res.ok) { location.replace('index.html'); return; }
+    busy = false;
+    Admin.loading(btn, false);
+    show('danger', res.message || 'Could not sign in. Try again.');
+  });
+})();
+</script>
 </body>
 </html>
